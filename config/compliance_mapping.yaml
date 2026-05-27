@@ -1,0 +1,14 @@
+# Placeholder compliance mappings for future report generation.
+mappings:
+  SFM-001:
+    cis:
+      - "Snowflake CIS administrative access review"
+    nist:
+      - "AC-2"
+      - "AC-6"
+  SFM-002:
+    cis:
+      - "Snowflake CIS role and privilege review"
+    nist:
+      - "AC-3"
+      - "AC-6"

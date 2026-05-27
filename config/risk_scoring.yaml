@@ -1,0 +1,12 @@
+# Placeholder scoring model. Tune weights after sample data and risk acceptance criteria exist.
+severity_weights:
+  critical: 100
+  high: 70
+  medium: 40
+  low: 15
+  informational: 5
+
+modifiers:
+  privileged_role_multiplier: 1.5
+  external_exposure_multiplier: 1.4
+  dormant_account_multiplier: 1.2

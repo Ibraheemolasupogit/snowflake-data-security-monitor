@@ -1,0 +1,16 @@
+# Control definitions will drive future checker registration and reporting.
+controls:
+  - id: SFM-001
+    name: Users with ACCOUNTADMIN role
+    severity: critical
+    enabled: true
+    framework_tags:
+      - CIS
+      - NIST
+  - id: SFM-002
+    name: Risky grants to PUBLIC role
+    severity: high
+    enabled: true
+    framework_tags:
+      - CIS
+      - NIST

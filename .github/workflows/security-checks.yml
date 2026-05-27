@@ -1,0 +1,17 @@
+name: Security Checks
+
+on:
+  pull_request:
+  push:
+    branches: ["main"]
+
+jobs:
+  placeholder-security-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Placeholder secret scan reminder
+        run: |
+          echo "Add secret scanning, dependency review, and SAST checks as the project matures."

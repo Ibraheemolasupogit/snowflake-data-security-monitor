@@ -1,0 +1,14 @@
+# Non-secret runtime settings. Secrets belong in environment variables or a secret manager.
+runtime:
+  output_dir: outputs
+  report_dir: reports
+  sql_dir: sql
+
+collection:
+  login_history_days: 90
+  query_history_days: 30
+  access_history_days: 30
+
+thresholds:
+  max_accountadmin_users: 5
+  dormant_user_days: 90
