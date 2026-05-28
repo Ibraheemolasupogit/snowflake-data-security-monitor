@@ -8,9 +8,63 @@ controls:
       - CIS
       - NIST
   - id: SFM-002
+    name: Excessive ACCOUNTADMIN users
+    severity: high
+    enabled: true
+    framework_tags:
+      - CIS
+      - NIST
+  - id: SFM-003
+    name: Dormant users
+    severity: medium
+    enabled: true
+    framework_tags:
+      - CIS
+      - NIST
+  - id: SFM-004
+    name: Disabled users with active grants
+    severity: high
+    enabled: true
+    framework_tags:
+      - CIS
+      - NIST
+  - id: SFM-005
     name: Risky grants to PUBLIC role
     severity: high
     enabled: true
     framework_tags:
       - CIS
+      - NIST
+  - id: SFM-006
+    name: Broad role privileges
+    severity: high
+    enabled: true
+    framework_tags:
+      - CIS
+      - NIST
+  - id: SFM-007
+    name: External stages
+    severity: medium
+    enabled: true
+    framework_tags:
+      - CIS
+      - NIST
+  - id: SFM-008
+    name: Outbound shares
+    severity: medium
+    enabled: true
+    framework_tags:
+      - CIS
+      - NIST
+  - id: SFM-009
+    name: Missing masking policy indicators
+    severity: medium
+    enabled: true
+    framework_tags:
+      - NIST
+  - id: SFM-010
+    name: Missing row access policy indicators
+    severity: medium
+    enabled: true
+    framework_tags:
       - NIST

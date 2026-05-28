@@ -8,7 +8,49 @@ mappings:
       - "AC-6"
   SFM-002:
     cis:
+      - "Snowflake CIS administrative access review"
+    nist:
+      - "AC-2"
+      - "AC-6"
+  SFM-003:
+    cis:
+      - "Snowflake CIS user lifecycle review"
+    nist:
+      - "AC-2"
+  SFM-004:
+    cis:
+      - "Snowflake CIS user lifecycle review"
+    nist:
+      - "AC-2"
+      - "AC-6"
+  SFM-005:
+    cis:
       - "Snowflake CIS role and privilege review"
+    nist:
+      - "AC-3"
+      - "AC-6"
+  SFM-006:
+    cis:
+      - "Snowflake CIS role and privilege review"
+    nist:
+      - "AC-3"
+      - "AC-6"
+  SFM-007:
+    cis:
+      - "Snowflake CIS stage review"
+    nist:
+      - "AC-4"
+      - "SC-7"
+  SFM-008:
+    cis:
+      - "Snowflake CIS data sharing review"
+    nist:
+      - "AC-4"
+  SFM-009:
+    nist:
+      - "AC-3"
+      - "SC-28"
+  SFM-010:
     nist:
       - "AC-3"
       - "AC-6"

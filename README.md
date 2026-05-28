@@ -6,9 +6,9 @@ This repository is intentionally at the project foundation stage. It does not co
 
 ## Build Status / Current Milestone
 
-Current milestone: **Milestone 4 — Metadata Collectors**.
+Current milestone: **Milestone 5 — MVP Security Checks**.
 
-Milestone 1 established the production-style repository structure and module boundaries. Milestone 2 added local YAML loading and validation. Milestone 3 added environment-backed Snowflake authentication configuration and a safe client wrapper. Milestone 4 adds metadata collectors that load SQL templates and delegate execution to the client wrapper while tests continue to use mocks only.
+Milestone 1 established the production-style repository structure and module boundaries. Milestone 2 added local YAML loading and validation. Milestone 3 added environment-backed Snowflake authentication configuration and a safe client wrapper. Milestone 4 added metadata collectors. Milestone 5 adds modular MVP security checks that evaluate mocked metadata records and return normalized findings.
 
 ## Why This Matters
 
@@ -162,7 +162,7 @@ python -m ruff check .
 python -m mypy src
 ```
 
-At this stage, tests validate package imports, model skeletons, configuration loading, the Snowflake client wrapper, and metadata collectors through mocks. They do not require Snowflake access.
+At this stage, tests validate package imports, model skeletons, configuration loading, the Snowflake client wrapper, metadata collectors, and MVP security checks through mocks and fake metadata. They do not require Snowflake access.
 
 ## Expected Future Outputs
 
@@ -199,4 +199,4 @@ This project is designed to demonstrate practical Data Security Engineer and Saa
 
 ## Current Status
 
-Milestone 4 adds metadata collectors that use SQL files from `sql/` and delegate execution to the Snowflake client wrapper. The next approved task should begin Milestone 5 by adding MVP security checks.
+Milestone 5 adds MVP security checks that evaluate metadata records and return findings. The next approved task should begin Milestone 6 by adding risk scoring, compliance mapping execution, and findings exports.
