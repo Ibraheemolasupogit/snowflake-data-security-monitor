@@ -6,9 +6,9 @@ This repository is intentionally at the project foundation stage. It does not co
 
 ## Build Status / Current Milestone
 
-Current milestone: **Milestone 3 — Snowflake Client Wrapper**.
+Current milestone: **Milestone 4 — Metadata Collectors**.
 
-Milestone 1 established the production-style repository structure and module boundaries. Milestone 2 added local YAML loading and validation. Milestone 3 adds environment-backed Snowflake authentication configuration and a safe client wrapper with mocked tests while deliberately avoiding real Snowflake access in CI.
+Milestone 1 established the production-style repository structure and module boundaries. Milestone 2 added local YAML loading and validation. Milestone 3 added environment-backed Snowflake authentication configuration and a safe client wrapper. Milestone 4 adds metadata collectors that load SQL templates and delegate execution to the client wrapper while tests continue to use mocks only.
 
 ## Why This Matters
 
@@ -162,7 +162,7 @@ python -m ruff check .
 python -m mypy src
 ```
 
-At this stage, tests validate package imports, model skeletons, configuration loading, and the Snowflake client wrapper through mocks. They do not require Snowflake access.
+At this stage, tests validate package imports, model skeletons, configuration loading, the Snowflake client wrapper, and metadata collectors through mocks. They do not require Snowflake access.
 
 ## Expected Future Outputs
 
@@ -199,4 +199,4 @@ This project is designed to demonstrate practical Data Security Engineer and Saa
 
 ## Current Status
 
-Milestone 3 adds Snowflake authentication configuration and a client wrapper with safe mocked tests. The next approved task should begin Milestone 4 by adding metadata collectors that use SQL files from `sql/`.
+Milestone 4 adds metadata collectors that use SQL files from `sql/` and delegate execution to the Snowflake client wrapper. The next approved task should begin Milestone 5 by adding MVP security checks.

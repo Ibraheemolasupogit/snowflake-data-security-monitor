@@ -1,11 +1,14 @@
-"""User collection placeholder."""
+"""User metadata collector."""
 
 from __future__ import annotations
 
+from snowflake_data_security_monitor.collectors.base import BaseSnowflakeCollector
 
-class UserCollector:
-    """Future collector for Snowflake users."""
 
-    def collect(self) -> list[dict[str, object]]:
-        """Collect users when Snowflake connectivity is implemented."""
-        raise NotImplementedError("User collection is not implemented yet.")
+class UsersCollector(BaseSnowflakeCollector):
+    """Collect Snowflake user metadata."""
+
+    sql_file_name = "users.sql"
+
+
+UserCollector = UsersCollector
