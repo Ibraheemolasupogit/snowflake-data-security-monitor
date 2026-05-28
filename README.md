@@ -6,9 +6,9 @@ This repository is intentionally at the project foundation stage. It does not co
 
 ## Build Status / Current Milestone
 
-Current milestone: **Milestone 5 — MVP Security Checks**.
+Current milestone: **Milestone 6 — Risk Scoring, Compliance Mapping, and Export Outputs**.
 
-Milestone 1 established the production-style repository structure and module boundaries. Milestone 2 added local YAML loading and validation. Milestone 3 added environment-backed Snowflake authentication configuration and a safe client wrapper. Milestone 4 added metadata collectors. Milestone 5 adds modular MVP security checks that evaluate mocked metadata records and return normalized findings.
+Milestone 1 established the production-style repository structure and module boundaries. Milestone 2 added local YAML loading and validation. Milestone 3 added environment-backed Snowflake authentication configuration and a safe client wrapper. Milestone 4 added metadata collectors. Milestone 5 added modular MVP security checks. Milestone 6 adds risk scoring, compliance mapping, and JSON/CSV export utilities.
 
 ## Why This Matters
 
@@ -162,7 +162,7 @@ python -m ruff check .
 python -m mypy src
 ```
 
-At this stage, tests validate package imports, model skeletons, configuration loading, the Snowflake client wrapper, metadata collectors, and MVP security checks through mocks and fake metadata. They do not require Snowflake access.
+At this stage, tests validate package imports, model skeletons, configuration loading, the Snowflake client wrapper, metadata collectors, MVP security checks, risk scoring, compliance mapping, and JSON/CSV exporters through mocks and fake metadata. They do not require Snowflake access.
 
 ## Expected Future Outputs
 
@@ -199,4 +199,4 @@ This project is designed to demonstrate practical Data Security Engineer and Saa
 
 ## Current Status
 
-Milestone 5 adds MVP security checks that evaluate metadata records and return findings. The next approved task should begin Milestone 6 by adding risk scoring, compliance mapping execution, and findings exports.
+Milestone 6 adds risk scoring, compliance mapping, and JSON/CSV export utilities. The next approved task should begin Milestone 7 by generating executive, technical, and remediation Markdown reports using templates.

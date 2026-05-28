@@ -2,9 +2,9 @@
 
 Placeholder setup guide for local development and future Snowflake configuration.
 
-Current milestone: **Milestone 5 — MVP Security Checks**.
+Current milestone: **Milestone 6 — Risk Scoring, Compliance Mapping, and Export Outputs**.
 
-This project includes Snowflake authentication configuration, a client wrapper, metadata collectors, and MVP security checks, but tests and CI do not connect to Snowflake. Do not add real credentials or commit a `.env` file.
+This project includes Snowflake authentication configuration, a client wrapper, metadata collectors, MVP security checks, risk scoring, compliance mapping, and JSON/CSV export utilities, but tests and CI do not connect to Snowflake. Do not add real credentials or commit a `.env` file.
 
 Milestone-based setup documentation should cover:
 
@@ -21,4 +21,4 @@ Run local tests with:
 python -m pytest
 ```
 
-The Milestone 5 tests validate local YAML configuration, Snowflake client behavior, metadata collector behavior, and security checks through mocks and fake metadata only. They do not require Snowflake access.
+The Milestone 6 tests validate local YAML configuration, Snowflake client behavior, metadata collector behavior, security checks, risk scoring, compliance mapping, and JSON/CSV exporters through mocks and fake metadata only. They do not require Snowflake access.
