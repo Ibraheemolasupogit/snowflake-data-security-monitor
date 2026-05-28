@@ -58,6 +58,8 @@ def _summary_rows(summary: dict[str, Any]) -> list[dict[str, Any]]:
             "value": summary["average_risk_score"],
         },
     ]
+    if "demo_notice" in summary:
+        rows.append({"metric": "demo_notice", "name": "all", "value": summary["demo_notice"]})
 
     for severity, count in summary.get("findings_by_severity", {}).items():
         rows.append({"metric": "findings_by_severity", "name": severity, "value": count})

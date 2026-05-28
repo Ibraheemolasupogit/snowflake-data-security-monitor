@@ -31,6 +31,7 @@ def make_report_finding(
             "owner": owner,
             "status": status,
             "detail": "fake metadata only",
+            "demo_data": True,
         },
     )
 
@@ -46,6 +47,7 @@ def test_write_executive_summary_contains_risk_overview(tmp_path: Path) -> None:
 
     report = output_path.read_text(encoding="utf-8")
     assert "# Executive Summary" in report
+    assert "synthetic sample findings only" in report
     assert "Total findings: 2" in report
     assert "- critical: 1" in report
     assert "- high: 1" in report

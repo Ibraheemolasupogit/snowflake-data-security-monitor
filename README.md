@@ -6,9 +6,9 @@ This repository is intentionally at the project foundation stage. It does not co
 
 ## Build Status / Current Milestone
 
-Current milestone: **Milestone 7 — Markdown Report Generation**.
+Current milestone: **Milestone 8 — Sample Outputs, Dashboard Polish, CI Improvements, and Portfolio Finish**.
 
-Milestone 1 established the production-style repository structure and module boundaries. Milestone 2 added local YAML loading and validation. Milestone 3 added environment-backed Snowflake authentication configuration and a safe client wrapper. Milestone 4 added metadata collectors. Milestone 5 added modular MVP security checks. Milestone 6 added risk scoring, compliance mapping, and JSON/CSV export utilities. Milestone 7 adds Markdown report generation utilities.
+Milestones 1 through 7 built the foundation, config validation, Snowflake client wrapper, metadata collectors, MVP checks, scoring, compliance mapping, exports, and Markdown reporting. Milestone 8 completes the portfolio MVP with fake sample outputs, sample reports, dashboard fallback behavior, CI-ready validation, and final documentation polish.
 
 ## Why This Matters
 
@@ -32,7 +32,7 @@ The future monitor is designed to identify risks such as:
 
 ## Planned MVP Checks
 
-Initial checks will be implemented as modular control classes or functions under `src/snowflake_data_security_monitor/checks/`.
+MVP checks are implemented as modular control classes under `src/snowflake_data_security_monitor/checks/`.
 
 - `accountadmin_users`
 - `excessive_accountadmin_users`
@@ -108,22 +108,22 @@ Initial checks will be implemented as modular control classes or functions under
 - Improve CI
 - Add portfolio polish
 
-## Architecture
+## Completed Architecture
 
 ```text
-SQL query skeletons -> collectors -> normalized models -> checks -> scoring -> reports
+SQL templates -> collectors -> metadata records -> checks -> findings -> scoring/mapping -> JSON/CSV/Markdown outputs -> dashboard
 ```
 
 Planned components:
 
 - `sql/`: read-only query templates for Snowflake metadata collection
-- `collectors/`: future Snowflake metadata collection modules
+- `collectors/`: Snowflake metadata collection modules that use the SQL templates
 - `models/`: typed data structures for findings, controls, assets, grants, and users
 - `checks/`: risk detection logic mapped to controls
 - `scoring/`: severity and risk score calculation
 - `compliance/`: mappings to frameworks such as CIS and NIST
 - `reporting/`: JSON, CSV, Markdown, and dashboard-ready output generation
-- `dashboard/`: placeholder Streamlit interface for future visualization
+- `dashboard/`: Streamlit interface that reads generated findings or fake sample findings
 
 ## Tech Stack
 
@@ -162,11 +162,41 @@ python -m ruff check .
 python -m mypy src
 ```
 
-At this stage, tests validate package imports, model skeletons, configuration loading, the Snowflake client wrapper, metadata collectors, MVP security checks, risk scoring, compliance mapping, JSON/CSV exporters, and Markdown report generation through mocks and fake metadata. They do not require Snowflake access.
+At this stage, tests validate package imports, model skeletons, configuration loading, the Snowflake client wrapper, metadata collectors, MVP security checks, risk scoring, compliance mapping, JSON/CSV exporters, Markdown report generation, sample generation, and dashboard fallback behavior through mocks and fake metadata. They do not require Snowflake access.
+
+## Sample Outputs
+
+The repository includes fake demo sample artifacts:
+
+- `outputs/sample/findings.json`
+- `outputs/sample/findings.csv`
+- `outputs/sample/risk_score_summary.csv`
+- `reports/sample/executive_summary.md`
+- `reports/sample/technical_report.md`
+- `reports/sample/remediation_plan.md`
+
+Regenerate them with:
+
+```bash
+python scripts/generate_sample_outputs.py
+```
+
+All sample data is synthetic demo data and was not collected from a real Snowflake environment.
+
+## Dashboard
+
+Run the dashboard against generated outputs or the included fake sample outputs:
+
+```bash
+pip install -e ".[dashboard]"
+streamlit run dashboard/streamlit_app.py
+```
+
+The dashboard reads `outputs/findings.csv` when present. If that file does not exist, it falls back to `outputs/sample/findings.csv`.
 
 ## Expected Future Outputs
 
-The scanner will eventually produce:
+The export/reporting utilities can produce:
 
 - `outputs/findings.json`
 - `outputs/findings.csv`
@@ -175,7 +205,7 @@ The scanner will eventually produce:
 - `reports/technical_report.md`
 - `reports/remediation_plan.md`
 
-Sample outputs will live under `outputs/sample/` and `reports/sample/` once the MVP is implemented.
+Fake demo samples are committed under `outputs/sample/` and `reports/sample/`.
 
 ## Security Notes
 
@@ -196,7 +226,13 @@ This project is designed to demonstrate practical Data Security Engineer and Saa
 - Supporting SSPM-style risk identification and remediation
 - Producing evidence-oriented reporting for compliance and governance
 - Mapping technical findings to frameworks such as CIS and NIST
+- Reviewing IAM/RBAC patterns such as privileged roles, broad grants, and `PUBLIC` exposure
+- Translating technical risk into remediation actions and executive-facing evidence
+
+## Portfolio Finish
+
+The MVP is portfolio-complete through Milestone 8. It demonstrates the core workflow of a Snowflake security posture monitor using safe fake data: metadata collection boundaries, modular checks, scoring, compliance mapping, export generation, Markdown reporting, and dashboard review. Real Snowflake execution remains intentionally separate from tests and sample artifacts.
 
 ## Current Status
 
-Milestone 7 adds executive, technical, and remediation Markdown report generation using package templates. The next approved task should begin Milestone 8 by adding sample outputs, dashboard polish, CI improvements, and portfolio polish.
+Milestone 8 completes the portfolio MVP polish. The project now demonstrates a modular Snowflake security posture monitoring workflow without including real credentials or real Snowflake data.

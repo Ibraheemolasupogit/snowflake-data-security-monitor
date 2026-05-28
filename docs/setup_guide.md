@@ -2,9 +2,9 @@
 
 Placeholder setup guide for local development and future Snowflake configuration.
 
-Current milestone: **Milestone 7 — Markdown Report Generation**.
+Current milestone: **Milestone 8 — Portfolio MVP Complete**.
 
-This project includes Snowflake authentication configuration, a client wrapper, metadata collectors, MVP security checks, risk scoring, compliance mapping, JSON/CSV export utilities, and Markdown report generation utilities, but tests and CI do not connect to Snowflake. Do not add real credentials or commit a `.env` file.
+This project includes Snowflake authentication configuration, a client wrapper, metadata collectors, MVP security checks, risk scoring, compliance mapping, JSON/CSV export utilities, Markdown report generation utilities, fake sample outputs, and a sample-aware dashboard. Tests and CI do not connect to Snowflake. Do not add real credentials or commit a `.env` file.
 
 Milestone-based setup documentation should cover:
 
@@ -21,4 +21,17 @@ Run local tests with:
 python -m pytest
 ```
 
-The Milestone 7 tests validate local YAML configuration, Snowflake client behavior, metadata collector behavior, security checks, risk scoring, compliance mapping, JSON/CSV exporters, and Markdown report generation through mocks and fake metadata only. They do not require Snowflake access.
+The Milestone 8 tests validate local YAML configuration, Snowflake client behavior, metadata collector behavior, security checks, risk scoring, compliance mapping, JSON/CSV exporters, Markdown report generation, sample generation, and dashboard fallback behavior through mocks and fake metadata only. They do not require Snowflake access.
+
+Generate fake sample outputs and reports with:
+
+```bash
+python scripts/generate_sample_outputs.py
+```
+
+Run the dashboard against real generated findings or the included fake sample findings:
+
+```bash
+pip install -e ".[dashboard]"
+streamlit run dashboard/streamlit_app.py
+```

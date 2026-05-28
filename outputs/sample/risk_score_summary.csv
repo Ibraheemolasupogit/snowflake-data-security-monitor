@@ -1,0 +1,13 @@
+metric,name,value
+total_findings,all,6
+total_risk_score,all,330
+average_risk_score,all,55.0
+demo_notice,all,"DEMO DATA ONLY - synthetic sample output, not collected from a real Snowflake environment"
+findings_by_severity,critical,1
+findings_by_severity,high,1
+findings_by_severity,medium,4
+findings_by_category,access,1
+findings_by_category,data-protection,1
+findings_by_category,identity,2
+findings_by_category,share,1
+findings_by_category,stage,1

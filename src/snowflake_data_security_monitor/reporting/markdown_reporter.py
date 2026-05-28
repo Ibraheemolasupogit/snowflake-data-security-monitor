@@ -59,6 +59,7 @@ def _build_report_context(findings: list[Finding]) -> dict[str, str]:
         "recommended_priorities": _format_recommended_priorities(findings),
         "technical_findings": _format_technical_findings(findings),
         "remediation_actions": _format_remediation_actions(findings),
+        "data_notice": _format_data_notice(findings),
     }
 
 
@@ -66,6 +67,15 @@ def _format_counts(counts: dict[str, int]) -> str:
     if not counts:
         return "- None"
     return "\n".join(f"- {name}: {count}" for name, count in counts.items())
+
+
+def _format_data_notice(findings: list[Finding]) -> str:
+    if findings and all(finding.evidence.get("demo_data") is True for finding in findings):
+        return (
+            "Demo data notice: this report uses synthetic sample findings only and was "
+            "not generated from a real Snowflake environment."
+        )
+    return "Data notice: review report provenance before sharing outside the security team."
 
 
 def _format_top_risks(findings: list[Finding], limit: int = 5) -> str:

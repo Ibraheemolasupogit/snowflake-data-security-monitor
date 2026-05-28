@@ -1,0 +1,99 @@
+[
+  {
+    "control_id": "SFM-001",
+    "title": "User has ACCOUNTADMIN role",
+    "severity": "critical",
+    "resource_type": "USER",
+    "resource_name": "DEMO_ADMIN_USER",
+    "description": "DEMO DATA ONLY: this sample is synthetic and was not collected from a real Snowflake environment. A demo user is directly assigned ACCOUNTADMIN.",
+    "remediation": "Review and remove ACCOUNTADMIN unless explicitly required.",
+    "evidence": {
+      "category": "identity",
+      "role": "ACCOUNTADMIN",
+      "owner": "Data Security",
+      "status": "Open",
+      "demo_data": true
+    }
+  },
+  {
+    "control_id": "SFM-003",
+    "title": "Dormant user detected",
+    "severity": "medium",
+    "resource_type": "USER",
+    "resource_name": "DEMO_DORMANT_USER",
+    "description": "DEMO DATA ONLY: this sample is synthetic and was not collected from a real Snowflake environment. A demo user has no recent login activity.",
+    "remediation": "Confirm ownership and disable or remove unused access.",
+    "evidence": {
+      "category": "identity",
+      "last_success_login": "2025-01-01T00:00:00+00:00",
+      "owner": "IAM",
+      "status": "Open",
+      "demo_data": true
+    }
+  },
+  {
+    "control_id": "SFM-005",
+    "title": "Risky privilege granted to PUBLIC",
+    "severity": "high",
+    "resource_type": "ROLE",
+    "resource_name": "PUBLIC",
+    "description": "DEMO DATA ONLY: this sample is synthetic and was not collected from a real Snowflake environment. PUBLIC has a risky demo privilege.",
+    "remediation": "Revoke broad or write-capable privileges from PUBLIC.",
+    "evidence": {
+      "category": "access",
+      "privilege": "OWNERSHIP",
+      "granted_on": "DATABASE",
+      "owner": "Platform Security",
+      "status": "Open",
+      "demo_data": true
+    }
+  },
+  {
+    "control_id": "SFM-007",
+    "title": "External stage detected",
+    "severity": "medium",
+    "resource_type": "STAGE",
+    "resource_name": "DEMO_EXTERNAL_STAGE",
+    "description": "DEMO DATA ONLY: this sample is synthetic and was not collected from a real Snowflake environment. A demo external stage points to object storage.",
+    "remediation": "Review storage integration, stage grants, and business approval.",
+    "evidence": {
+      "category": "stage",
+      "stage_url": "s3://demo-bucket/path",
+      "owner": "Data Platform",
+      "status": "In Review",
+      "demo_data": true
+    }
+  },
+  {
+    "control_id": "SFM-008",
+    "title": "Outbound share detected",
+    "severity": "medium",
+    "resource_type": "SHARE",
+    "resource_name": "DEMO_OUTBOUND_SHARE",
+    "description": "DEMO DATA ONLY: this sample is synthetic and was not collected from a real Snowflake environment. A demo outbound share has external consumers.",
+    "remediation": "Validate consumers, shared objects, and approval evidence.",
+    "evidence": {
+      "category": "share",
+      "accounts": "DEMO_CONSUMER_ACCOUNT",
+      "owner": "Data Governance",
+      "status": "Open",
+      "demo_data": true
+    }
+  },
+  {
+    "control_id": "SFM-009",
+    "title": "Missing masking policy indicator",
+    "severity": "medium",
+    "resource_type": "TABLE",
+    "resource_name": "DEMO_CUSTOMERS",
+    "description": "DEMO DATA ONLY: this sample is synthetic and was not collected from a real Snowflake environment. A sensitive demo table lacks a masking indicator.",
+    "remediation": "Review whether masking should protect sensitive columns.",
+    "evidence": {
+      "category": "data-protection",
+      "sensitive": true,
+      "owner": "Data Governance",
+      "status": "Planned",
+      "demo_data": true
+    }
+  }
+]

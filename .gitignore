@@ -18,11 +18,11 @@ build/
 outputs/*
 !outputs/.gitkeep
 !outputs/sample/
-!outputs/sample/.gitkeep
+!outputs/sample/**
 reports/*
 !reports/.gitkeep
 !reports/sample/
-!reports/sample/.gitkeep
+!reports/sample/**
 
 .DS_Store
 .idea/

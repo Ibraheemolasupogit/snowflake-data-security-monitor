@@ -35,6 +35,9 @@ snowflake-security-monitor = "snowflake_data_security_monitor.main:app"
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools.package-data]
+snowflake_data_security_monitor = ["reporting/templates/*.tmpl"]
+
 [tool.ruff]
 line-length = 100
 target-version = "py311"
