@@ -10,3 +10,17 @@ modifiers:
   privileged_role_multiplier: 1.5
   external_exposure_multiplier: 1.4
   dormant_account_multiplier: 1.2
+
+risk_score_bands:
+  low:
+    min: 0
+    max: 39
+  medium:
+    min: 40
+    max: 69
+  high:
+    min: 70
+    max: 89
+  critical:
+    min: 90
+    max: 100

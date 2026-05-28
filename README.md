@@ -6,9 +6,9 @@ This repository is intentionally at the project foundation stage. It does not co
 
 ## Build Status / Current Milestone
 
-Current milestone: **Milestone 1 — Repository Foundation and Security Engineering Scaffold**.
+Current milestone: **Milestone 2 — Configuration Loading and Validation**.
 
-Milestone 1 establishes the production-style repository structure, configuration skeletons, SQL query skeletons, Python package layout, documentation placeholders, CI placeholders, and module boundaries. It deliberately avoids Snowflake connectivity, real credentials, and scanner implementation logic.
+Milestone 1 established the production-style repository structure, configuration skeletons, SQL query skeletons, Python package layout, documentation placeholders, CI placeholders, and module boundaries. Milestone 2 adds local YAML loading and validation for the repository config files while deliberately avoiding Snowflake connectivity, real credentials, and scanner implementation logic.
 
 ## Why This Matters
 
@@ -162,7 +162,7 @@ python -m ruff check .
 python -m mypy src
 ```
 
-At this foundation stage, tests are placeholders that confirm the package can be imported and the model skeletons are usable.
+At this stage, tests validate package imports, model skeletons, and configuration loading. They do not require Snowflake access.
 
 ## Expected Future Outputs
 
@@ -199,4 +199,4 @@ This project is designed to demonstrate practical Data Security Engineer and Saa
 
 ## Current Status
 
-Milestone 1 is complete as a foundation scaffold. The next approved task should begin Milestone 2 by implementing configuration loading and YAML validation while keeping Snowflake connectivity mocked and inactive.
+Milestone 2 adds configuration loading and YAML validation while keeping Snowflake connectivity mocked and inactive. The next approved task should begin Milestone 3 by adding Snowflake authentication configuration and a client wrapper with safe mocked tests.
