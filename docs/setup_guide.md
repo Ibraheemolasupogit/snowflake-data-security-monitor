@@ -2,9 +2,9 @@
 
 Placeholder setup guide for local development and future Snowflake configuration.
 
-Current milestone: **Milestone 2 — Configuration Loading and Validation**.
+Current milestone: **Milestone 3 — Snowflake Client Wrapper**.
 
-This project does not connect to Snowflake yet. Do not add real credentials. Snowflake access should remain mocked or inactive until the approved milestone introduces client configuration and tests.
+This project includes Snowflake authentication configuration and a client wrapper, but tests and CI do not connect to Snowflake. Do not add real credentials or commit a `.env` file.
 
 Milestone-based setup documentation should cover:
 
@@ -21,4 +21,4 @@ Run local tests with:
 python -m pytest
 ```
 
-The Milestone 2 tests validate local YAML configuration only and do not require Snowflake access.
+The Milestone 3 tests validate local YAML configuration and Snowflake client behavior through mocks only. They do not require Snowflake access.
