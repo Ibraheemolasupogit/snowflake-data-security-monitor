@@ -1,6 +1,6 @@
 # Snowflake Data Security Monitor
 
-A portfolio-ready foundation for a Python and SQL-based Snowflake security posture monitoring tool. The future MVP will collect Snowflake metadata about users, roles, grants, stages, shares, login activity, masking policies, and row access policies, then evaluate that data against configurable security controls.
+A portfolio-ready Python and SQL-based Snowflake security posture monitoring tool. The MVP design is built to collect Snowflake metadata about users, roles, grants, stages, shares, login activity, masking policies, and row access policies, then evaluate that data against configurable security controls.
 
 This repository is intentionally at the project foundation stage. It does not connect to Snowflake, does not include credentials, and does not implement the full scanner yet.
 
